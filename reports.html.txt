@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Reports - National Confederation of MidWife</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="images/55555.webp" alt="National Confederation of MidWife Logo">
+                <h1>View Reports</h1>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="children-profiles.html">Children Profiles</a></li>
+                    <li><a href="reports.html">Reports</a></li>
+                    <li><a href="settings.html">Settings</a></li>
+                    <li><a href="logout.html">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="view-reports">
+        <div class="container">
+            <h2>Reports</h2>
+            <div class="report-filters">
+                <label for="reportType">Report Type:</label>
+                <select id="reportType">
+                    <option value="all">All</option>
+                    <option value="monthly">Monthly</option>
+                    <option value="annual">Annual</option>
+                </select>
+
+                <label for="dateRange">Date Range:</label>
+                <input type="date" id="startDate">
+                <input type="date" id="endDate">
+                
+                <button id="filterReportsBtn" class="button">Filter Reports</button>
+            </div>
+
+            <div id="reportsTable">
+                <!-- Reports Table will be dynamically populated here -->
+            </div>
+
+            <div class="export-options">
+                <button id="exportPDFBtn" class="button">Export as PDF</button>
+                <button id="exportExcelBtn" class="button">Export as Excel</button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 National Confederation of MidWife</p>
+            <div class="logo">
+                <img src="images/6666.webp" alt="National Confederation of MidWife Logo" width="35px" height="30px">
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts.js" defer></script>
+</body>
+</html>
