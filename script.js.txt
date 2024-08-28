@@ -1,0 +1,293 @@
+// Enhanced script for smart and smooth form experience
+
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('registerForm');
+    const steps = form.querySelectorAll('.form-step');
+    const nextButtons = form.querySelectorAll('.next');
+    const prevButtons = form.querySelectorAll('.prev');
+    const submitButton = form.querySelector('.submit');
+    let currentStep = 0;
+
+    function showStep(step) {
+        steps.forEach((stepElement, index) => {
+            stepElement.classList.toggle('active', index === step);
+        });
+    }
+
+    function validateStep(step) {
+        const inputs = steps[step].querySelectorAll('input[required]');
+        let valid = true;
+
+        inputs.forEach(input => {
+            if (!input.value) {
+                input.classList.add('error');
+                input.nextElementSibling.textContent = 'This field is required';
+                valid = false;
+            } else {
+                input.classList.remove('error');
+                input.nextElementSibling.textContent = '';
+            }
+        });
+
+        return valid;
+    }
+
+    nextButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            if (validateStep(currentStep)) {
+                currentStep++;
+                showStep(currentStep);
+            }
+        });
+    });
+
+    prevButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            currentStep--;
+            showStep(currentStep);
+        });
+    });
+
+    submitButton.addEventListener('click', (event) => {
+        if (!validateStep(currentStep)) {
+            event.preventDefault();
+        }
+    });
+
+    // Smooth Scrolling for better UX
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('loginForm');
+    
+    form.addEventListener('submit', (event) => {
+        const email = form.querySelector('#email');
+        const password = form.querySelector('#password');
+        let valid = true;
+
+        // Simple validation
+        if (!email.value) {
+            email.classList.add('error');
+            email.nextElementSibling.textContent = 'Email is required';
+            valid = false;
+        } else {
+            email.classList.remove('error');
+            email.nextElementSibling.textContent = '';
+        }
+
+        if (!password.value) {
+            password.classList.add('error');
+            password.nextElementSibling.textContent = 'Password is required';
+            valid = false;
+        } else {
+            password.classList.remove('error');
+            password.nextElementSibling.textContent = '';
+        }
+
+        if (!valid) {
+            event.preventDefault();
+        }
+    });
+});
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const addScheduleBtn = document.getElementById('addScheduleBtn');
+    const scheduleModal = document.getElementById('scheduleModal');
+    const closeModal = document.querySelector('.close');
+    const scheduleForm = document.getElementById('scheduleForm');
+    const schedulesTable = document.getElementById('schedulesTable');
+    
+    // Open the modal
+    addScheduleBtn.addEventListener('click', function () {
+        scheduleModal.style.display = 'block';
+        document.getElementById('modalTitle').textContent = 'Add New Schedule';
+        scheduleForm.reset();
+        document.getElementById('scheduleId').value = '';
+    });
+
+    // Close the modal
+    closeModal.addEventListener('click', function () {
+        scheduleModal.style.display = 'none';
+    });
+
+    // Close modal when clicking outside
+    window.addEventListener('click', function (event) {
+        if (event.target === scheduleModal) {
+            scheduleModal.style.display = 'none';
+        }
+    });
+
+    // Handle form submission
+    scheduleForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+        // Add logic to handle form submission
+        const formData = new FormData(scheduleForm);
+        // Example: Send data to server, refresh the schedule list
+        console.log('Form submitted:', formData);
+        scheduleModal.style.display = 'none';
+    });
+
+    // Refresh schedules
+    document.getElementById('refreshSchedulesBtn').addEventListener('click', function () {
+        // Fetch and update schedules
+        console.log('Schedules refreshed');
+        // Example: Fetch schedules from server and update the table
+    });
+});
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const filterReportsBtn = document.getElementById('filterReportsBtn');
+    const exportPDFBtn = document.getElementById('exportPDFBtn');
+    const exportExcelBtn = document.getElementById('exportExcelBtn');
+    const reportsTable = document.getElementById('reportsTable');
+    
+    // Handle filtering reports
+    filterReportsBtn.addEventListener('click', function () {
+        const reportType = document.getElementById('reportType').value;
+        const startDate = document.getElementById('startDate').value;
+        const endDate = document.getElementById('endDate').value;
+        
+        // Add logic to fetch and display filtered reports
+        console.log('Filter reports with type:', reportType, 'from:', startDate, 'to:', endDate);
+        // Example: Fetch reports from server and update the table
+    });
+
+    // Handle exporting reports as PDF
+    exportPDFBtn.addEventListener('click', function () {
+        // Add logic to export reports as PDF
+        console.log('Exporting reports as PDF');
+        // Example: Trigger PDF export functionality
+    });
+
+    // Handle exporting reports as Excel
+    exportExcelBtn.addEventListener('click', function () {
+        // Add logic to export reports as Excel
+        console.log('Exporting reports as Excel');
+        // Example: Trigger Excel export functionality
+    });
+});
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const filterGalleryBtn = document.getElementById('filterGalleryBtn');
+    const searchInput = document.getElementById('search');
+    const filterCategory = document.getElementById('filterCategory');
+    const galleryGrid = document.getElementById('galleryGrid');
+
+    // Function to fetch and display gallery images
+    function loadGalleryImages() {
+        const category = filterCategory.value;
+        const searchQuery = searchInput.value.toLowerCase();
+
+        // Example: Fetch gallery images from server or local source
+        // This is where you'd handle the filtering and dynamic content loading
+        console.log('Loading gallery images with category:', category, 'and search query:', searchQuery);
+
+        // Example of adding images dynamically
+        galleryGrid.innerHTML = ''; // Clear existing images
+
+        // Simulate adding images
+        for (let i = 1; i <= 10; i++) {
+            const image = document.createElement('div');
+            image.className = 'gallery-item';
+            image.innerHTML = `
+                <img src="images/gallery${i}.jpg" alt="Gallery Image ${i}">
+                <div class="gallery-item-overlay">
+                    <h3>Image ${i}</h3>
+                </div>
+            `;
+            galleryGrid.appendChild(image);
+        }
+    }
+
+    // Handle filtering and searching
+    filterGalleryBtn.addEventListener('click', function () {
+        loadGalleryImages();
+    });
+
+    searchInput.addEventListener('input', function () {
+        loadGalleryImages();
+    });
+
+    filterCategory.addEventListener('change', function () {
+        loadGalleryImages();
+    });
+
+    // Initial load
+    loadGalleryImages();
+});
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const filterProfilesBtn = document.getElementById('filterProfilesBtn');
+    const searchInput = document.getElementById('search');
+    const filterAge = document.getElementById('filterAge');
+    const profilesGrid = document.getElementById('profilesGrid');
+
+    // Function to fetch and display profiles
+    function loadProfiles() {
+        const ageGroup = filterAge.value;
+        const searchQuery = searchInput.value.toLowerCase();
+
+        // Example: Fetch profiles from server or local source
+        // This is where you'd handle the filtering and dynamic content loading
+        console.log('Loading profiles with age group:', ageGroup, 'and search query:', searchQuery);
+
+        // Example of adding profiles dynamically
+        profilesGrid.innerHTML = ''; // Clear existing profiles
+
+        // Simulate adding profiles
+        for (let i = 1; i <= 8; i++) {
+            const profile = document.createElement('div');
+            profile.className = 'profile-item';
+            profile.innerHTML = `
+                <img src="images/child${i}.jpg" alt="Child ${i}">
+                <h3>Child ${i}</h3>
+                <p>Age: ${i + 5}</p>
+                <p>Location: Location ${i}</p>
+                <a href="profile-details.html?id=${i}" class="view-profile-btn">View Profile</a>
+            `;
+            profilesGrid.appendChild(profile);
+        }
+    }
+
+    // Handle filtering and searching
+    filterProfilesBtn.addEventListener('click', function () {
+        loadProfiles();
+    });
+
+    searchInput.addEventListener('input', function () {
+        loadProfiles();
+    });
+
+    filterAge.addEventListener('change', function () {
+        loadProfiles();
+    });
+
+    // Initial load
+    loadProfiles();
+});
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const settingsForm = document.getElementById('settingsForm');
+
+    settingsForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+        // Add form validation and submission logic here
+
+        // Example alert for demonstration purposes
+        alert('Settings have been saved successfully!');
+    });
+});
