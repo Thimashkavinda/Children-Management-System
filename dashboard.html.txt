@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - National Confederation of MidWife</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="images/55555.webp" alt="National Confederation of MidWife Logo">
+                <h1>Dashboard</h1>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="dashboard.html" class="active">Dashboard</a></li>
+                    <li><a href="children-profiles.html">Children Profiles</a></li>
+                    <li><a href="reports.html">Reports</a></li>
+                    <li><a href="settings.html">Settings</a></li>
+                    <li><a href="logout.html">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section>
+            <h2>Welcome, </h2>
+            <div class="dashboard-sections">
+                <div class="dashboard-item">
+                    <img src="images/7777.jpg" alt="Manage Schedules" class="dashboard-icon">
+                    <a href="schedule.html">Manage Schedules</a>
+                </div>
+                <div class="dashboard-item">
+                    <img src="images/8888.webp" alt="View Reports" class="dashboard-icon">
+                    <a href="reports.html">View Reports</a>
+                </div>
+                <div class="dashboard-item">
+                    <img src="images/9999.webp" alt="View Gallery" class="dashboard-icon">
+                    <a href="gallery.html">View Gallery</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 National Confederation of MidWife</p>
+        <div class="logo">
+            <img src="images/6666.webp" alt="National Confederation of MidWife Logo" width="35px" height="30px">
+        </div>
+    </footer>
+</body>
+</html>
