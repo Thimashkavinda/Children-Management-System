@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Children Management System</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="images/55555.webp" alt="Children Management System Logo">
+                <h1>Children Management System</h1>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="register.html">Register</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h2>Welcome to Children Management System</h2>
+            <p>Manage your children's activities, progress, and more with ease.</p>
+            <a href="register.html" class="cta-button">Get Started</a>
+        </div>
+    </section>
+
+    <section class="vision-mission">
+        <div class="container">
+            <div class="vision">
+                <h2>Our Vision</h2>
+                <p>“A healthier nation that contributes to its economic, social, mental and spiritual development.”</p>
+            </div>
+            <div class="mission">
+                <h2>Our Mission</h2>
+                <p>“To contribute to the social and economic development of Sri Lanka by achieving the highest attainable health status through promotive, preventive, curative and rehabilitative services of high quality made available and accessible to people of Sri Lanka.”</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2>Our Features</h2>
+            <div class="feature-box">
+                <img src="images/feature1.jpg" alt="Feature 1">
+                <h3>Activity Tracking</h3>
+                <p>Keep track of your children's daily activities and milestones.</p>
+            </div>
+            <div class="feature-box">
+                <img src="images/feature2.jpg" alt="Feature 2">
+                <h3>Progress Reports</h3>
+                <p>Get detailed reports on your children's educational and personal growth.</p>
+            </div>
+            <div class="feature-box">
+                <img src="images/feature3.jpg" alt="Feature 3">
+                <h3>Parental Controls</h3>
+                <p>Set up and manage restrictions to ensure a safe environment.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <h2>What Parents Say</h2>
+            <div class="testimonial-box">
+                <img src="images/parent1.jpg" alt="Parent 1">
+                <p>"This system has made it so much easier to manage my children's schedules and activities."</p>
+                <h4>- Sarah L.</h4>
+            </div>
+            <div class="testimonial-box">
+                <img src="images/parent2.jpg" alt="Parent 2">
+                <p>"I love the detailed progress reports. They help me keep track of my kids' development."</p>
+                <h4>- Michael T.</h4>
+            </div>
+            <div class="testimonial-box">
+                <img src="images/parent3.jpg" alt="Parent 3">
+                <p>"The parental controls give me peace of mind knowing my children are safe online."</p>
+                <h4>- Jessica K.</h4>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Children Management System</p>
+            <div class="logo">
+                <img src="images/6666.webp" alt="Children Management System Logo" width="35px" height="30px">
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
