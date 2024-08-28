@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Children Management System</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="images/55555.webp" alt="Children Management System Logo">
+                <h1>Login</h1>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="register.html">Register</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <form id="loginForm" class="smart-form">
+                <h2>Login to Your Account</h2>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <small class="error-message"></small>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <small class="error-message"></small>
+
+                <button type="submit" class="submit">Login</button>
+
+                <div class="additional-options">
+                    <a href="#">Forgot Password?</a>
+                    <p>Don't have an account? <a href="register.html">Register here</a></p>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Children Management System</p>
+            <div class="logo">
+                <img src="images/6666.webp" alt="Children Management System Logo" width="35px" height="30px">
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
