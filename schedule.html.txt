@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Schedules - National Confederation of MidWife</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="images/55555.webp" alt="National Confederation of MidWife Logo">
+                <h1>Manage Schedules</h1>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="children-profiles.html">Children Profiles</a></li>
+                    <li><a href="reports.html">Reports</a></li>
+                    <li><a href="settings.html">Settings</a></li>
+                    <li><a href="logout.html">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="manage-schedule">
+        <div class="container">
+            <h2>Manage Your Schedules</h2>
+            <div class="schedule-actions">
+                <button id="addScheduleBtn" class="button">Add New Schedule</button>
+                <button id="refreshSchedulesBtn" class="button">Refresh Schedules</button>
+            </div>
+            
+            <div id="schedulesTable">
+                <!-- Schedules Table will be dynamically populated here -->
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 National Confederation of MidWife</p>
+            <div class="logo">
+                <img src="images/6666.webp" alt="National Confederation of MidWife Logo" width="35px" height="30px">
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal for Adding/Editing Schedule -->
+    <div id="scheduleModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalTitle">Add New Schedule</h2>
+            <form id="scheduleForm">
+                <label for="scheduleTitle">Title:</label>
+                <input type="text" id="scheduleTitle" name="scheduleTitle" required>
+
+                <label for="scheduleDate">Date:</label>
+                <input type="date" id="scheduleDate" name="scheduleDate" required>
+
+                <label for="scheduleTime">Time:</label>
+                <input type="time" id="scheduleTime" name="scheduleTime" required>
+
+                <label for="scheduleDescription">Description:</label>
+                <textarea id="scheduleDescription" name="scheduleDescription" rows="4" required></textarea>
+
+                <input type="hidden" id="scheduleId" name="scheduleId">
+                <button type="submit" class="button">Save Schedule</button>
+            </form>
+        </div>
+    </div>
+    
+    <script src="scripts.js" defer></script>
+</body>
+</html>
